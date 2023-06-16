@@ -8,8 +8,8 @@ To get started make sure you have installed all the prerequisites in your comput
 
 ### Prerequisites
 To compile this implementation you will need:
-- [numpy]([https://cmake.org/download/](https://numpy.org/install/))
-- [pickle]([https://www.boost.org/users/download/](https://docs.python.org/3/library/pickle.html)) library
+- [numpy](https://numpy.org/install/)
+- [pickle](https://docs.python.org/3/library/pickle.html) library
 - [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module
 - Python 3.7 or later
 
