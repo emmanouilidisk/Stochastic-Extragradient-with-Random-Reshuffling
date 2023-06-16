@@ -31,14 +31,15 @@ optimizer = op.optimizer(problem)
 results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
 ```
 
-For plotting the result, you can use the command:  
+For plotting the results, you can use the command:  
 ```
 op.plot(results[1], y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
-You will get the following result:  
-
-
+or for multiple variables you can do:
+```
+op.plot_multiple_var(results1, results2, labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
+```
 <!-- CONTRIBUTING -->
 ## Contributing
 
