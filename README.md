@@ -21,13 +21,13 @@ Run your own experiments using the `optimizer_module` by typing just 3 commands:
 ```
 import optimizer_module as op
 
-# initialize the problem, e.g. quadratic
-problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=0.6)
+# initialize the problem (e.g. "quadratic")
+problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=10)
 
-# initialize optimizer object for this specific problem
+# initialize optimizer object  
 optimizer = op.optimizer(problem)
 
-# run your favorite optimization Algorithm (e.g. SEG)
+# run your favorite optimization Algorithm (e.g. SEG, SGDA, etc.)
 results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
 ```
 
@@ -36,7 +36,7 @@ For plotting the results, you can use the command:
 op.plot(results[1], y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
-or for multiple variables you can do:
+or for plotting multiple variables you can do:
 ```
 op.plot_multiple_var(results1, results2, labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
 ```
