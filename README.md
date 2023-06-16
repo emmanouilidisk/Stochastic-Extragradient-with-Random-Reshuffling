@@ -16,7 +16,7 @@ To compile this implementation you will need:
 ### Running the Experiments of the paper
 To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the "experiments" folder.  
 
-### Optimizer Module 
+## Optimizer Module 
 Run your own experiments using the `optimizer_module` by typing just 3 commands:  
 ```
 import optimizer_module as op
@@ -30,6 +30,14 @@ optimizer = op.optimizer(problem)
 # run your favorite optimization Algorithm (e.g. SEG)
 results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
 ```
+
+For plotting the result, you can use the command:  
+```
+op.plot(results[1], y_label = "Relative Error", title = "Strongly Monotone Game")
+```
+
+You will get the following result:  
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
