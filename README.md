@@ -1,7 +1,5 @@
 # Stochastic ExtraGradient with Random Reshuffling
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
 This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling". In order to use our code, please cite our paper.  
 
 <!-- GETTING STARTED -->
