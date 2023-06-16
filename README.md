@@ -1,9 +1,5 @@
 # Stochastic ExtraGradient with Random Reshuffling
 
-//<p align="center">
-//<img src="https://github.com/emmanouilidisk/RSA_Algorithm/blob/main/Demonstration.gif" align="center" width="705" height="380" />
-//</p>
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling". In order to use our code, please cite our paper.  
