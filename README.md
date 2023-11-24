@@ -4,7 +4,7 @@ This is the official implementation of the paper "Stochastic Extragradient with 
 
 <!-- GETTING STARTED -->
 ## Getting Started
-To get started make sure you have installed all the prerequisites in your computer and then follow the instuctions in the installation section.
+To get started make sure you have installed all the prerequisites on your computer and then follow the instructions in the installation section.
 
 ### Prerequisites
 To compile this implementation you will need:
@@ -12,9 +12,6 @@ To compile this implementation you will need:
 - [pickle](https://docs.python.org/3/library/pickle.html) library
 - [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module
 - Python 3.7 or later
-
-### Running the Experiments of the paper
-To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the "experiments" folder.  
 
 ## Optimizer Module 
 Run your own experiments using the `optimizer_module` by typing just 3 commands:  
@@ -38,8 +35,13 @@ op.plot(results[1], y_label = "Relative Error", title = "Strongly Monotone Game"
 
 or for plotting multiple variables you can do:
 ```
-op.plot_multiple_var(results1, results2, labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
+op.plot_multiple_var(list_with_vars, labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
 ```
+
+
+### Running the Experiments of the paper
+To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the "experiments" folder.  
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
