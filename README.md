@@ -1,6 +1,11 @@
-# Stochastic ExtraGradient with Random Reshuffling
+# Stochastic ExtraGradient with Random Reshuffling: Improved Convergence for Variational Inequalities
 
-This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling". In order to use our code, please cite our paper.  
+This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it.     
+
+In order to use our code, cite our paper. Also, star-ing the Github Repo is more than welcomed!
+```
+citation
+```
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -24,7 +29,7 @@ problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=10)
 # initialize optimizer object  
 optimizer = op.optimizer(problem)
 
-# run your favorite optimization Algorithm (e.g. SEG, SGDA, etc.)
+# run your favorite optimization Algorithm (e.g.SGD, SEG, SGDA, etc.)
 results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
 ```
 
