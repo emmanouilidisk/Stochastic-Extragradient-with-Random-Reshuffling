@@ -2,7 +2,7 @@
 
 This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it.     
 
-In order to use our code, cite our paper. Also, star-ing the Github Repo is more than welcomed!
+If you found our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed!
 ```
 citation
 ```
@@ -40,17 +40,17 @@ results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=1
 
 For plotting the results, you can use the command:  
 ```
-op.plot(results[1], y_label = "Relative Error", title = "Strongly Monotone Game")
+op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
 or for plotting multiple variables you can do:
 ```
-op.plot_multiple_var(list_with_vars, labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
+op.plot_multiple_var([var1, var2], labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
 ```
 
 
 ### Running the Experiments of the paper
-To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the "experiments" folder.  
+To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the [experiments]() folder.  
 
 <!-- CONTRIBUTING -->
 ## Contributing
