@@ -18,18 +18,23 @@ To compile this implementation you will need:
 - [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module
 - Python 3.7 or later
 
+You can install the prerequisites with the following command inside the project's folder
+```
+$ pip install -r requirements.txt
+```
+
 ## Optimizer Module 
 Run your own experiments using the `optimizer_module` by typing just 3 commands:  
 ```
 import optimizer_module as op
 
-# initialize the problem (e.g. "quadratic")
+# initialize the problem and optimizer object
 problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=10)
 
 # initialize optimizer object  
 optimizer = op.optimizer(problem)
 
-# run your favorite optimization Algorithm (e.g.SGD, SEG, SGDA, etc.)
+# run your favorite optimization algorithm (e.g.SGD, SEG, SGDA, etc.)
 results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
 ```
 
