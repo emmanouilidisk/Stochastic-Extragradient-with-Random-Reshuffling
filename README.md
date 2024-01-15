@@ -24,7 +24,7 @@ $ pip install -r requirements.txt
 ```
 
 ## Optimizer Module 
-Run your own experiments using the `optimizer_module` by typing just 3 commands:  
+As part of the paper, we provide the 'optimizer_module' that aims to be an easy-to-edit and efficient implementation of common optimization algorithms. Run your own experiments using the `optimizer_module` by typing just 3 commands:  
 ```
 import optimizer_module as op
 
