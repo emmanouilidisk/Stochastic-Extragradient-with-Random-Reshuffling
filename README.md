@@ -7,6 +7,10 @@ If you found our code useful consider citing our paper. Also, star-ing the Githu
 citation
 ```
 
+# Optimizer Module 
+As part of the paper, we provide the Optimizer's module that aims to be an efficient and easy-to-customize implementation of common optimization algorithms.  
+To run your experiments follow the details in the below sections.  
+
 <!-- GETTING STARTED -->
 ## Getting Started
 To get started make sure you have installed all the prerequisites on your computer and then follow the instructions in the installation section.
