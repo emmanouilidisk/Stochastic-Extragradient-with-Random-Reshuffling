@@ -1,6 +1,6 @@
 # Stochastic ExtraGradient with Random Reshuffling: Improved Convergence for Variational Inequalities
 
-This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it.     
+This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it. To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the [experiments]() folder.      
 
 If you found our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed!
 ```
@@ -48,9 +48,6 @@ or for plotting multiple variables you can do:
 op.plot_multiple_var([var1, var2], labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
 ```
 
-
-### Running the Experiments of the paper
-To reproduce the experiments of the paper "Stochastic Extragradient with Random Reshuffling" clone the project and run the files in the [experiments]() folder.  
 
 <!-- CONTRIBUTING -->
 ## Contributing
