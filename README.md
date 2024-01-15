@@ -27,7 +27,7 @@ $ pip install -r requirements.txt
 ```
 
 ## Run your experiments!
-Run your own experiments using the `optimizer_module` by typing just 3 commands:  
+Run your own experiments using the `optimizer_module` in less than 5 commands:  
 ```
 import optimizer_module as op
 
