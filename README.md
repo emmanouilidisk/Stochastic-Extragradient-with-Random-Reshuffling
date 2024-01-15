@@ -50,6 +50,20 @@ or for plotting multiple variables you can do:
 ```
 op.plot_multiple_var([var1, var2], labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
 ```
+## Currently supported
+The current implementation supports the following algorithms:
+- Stochastic Gradient Descent (SGD)
+- SGDA
+- SEG
+- Stochastic Hamiltonian GD
+
+and the following optimization problems:
+- Strongly monotone quadratic
+- Bilinear Game
+- Convex - Concave
+- Weak Minty Inequality
+
+
 
 
 <!-- CONTRIBUTING -->
