@@ -13,79 +13,78 @@ def experiment_sc_sc_RR_vs_SO_vsIG():
     condition_num_list = [1, 5, 10]
     params_list = []  # list with the params of the experiments
 
-    # run SEG vs SEG-RR
-    for i in range(len(condition_num_list)):
-        print("started problem with condition_number:", condition_num_list[i])
-        problem = op.problem(problem_type="quadratic", n=n, d=d, mu=mu, L=condition_num_list[i])
-        optimizer = op.optimizer(problem)
-
-        gamma_1_max = problem.mu / (
-                10 * (problem.L_max ** 2) * np.sqrt(10 * (problem.n ** 2) + 2 * problem.n + 54))
-
-        last_iterate_SEG, relative_error_SEG, trajectory_SEG = optimizer.SEG(gamma_1=gamma_1_max,
-                                                                             gamma_2=2 * gamma_1_max, x0=x0,
-                                                                             n_iter=n_iter,
-                                                                             trials=trials, rr=False,
-                                                                             return_trajectory=True)
-
-        last_iterate_SEG_RR, relative_error_SEG_RR, trajectory_SEG_RR = optimizer.SEG(gamma_1=gamma_1_max,
-                                                                                      gamma_2=2 * gamma_1_max, x0=x0,
-                                                                                      n_iter=n_iter,
-                                                                                      trials=trials, rr=True,
-                                                                                      return_trajectory=True)
-        last_iterate_SO, relative_error_SO, trajectory_SO = optimizer.SEG(gamma_1=gamma_1_max, gamma_2=2 * gamma_1_max,
-                                                                          x0=x0,
-                                                                          n_iter=n_iter,
-                                                                          trials=trials, so=True,
-                                                                          return_trajectory=True)
-
-        last_iterate_IG, relative_error_IG, trajectory_IG = optimizer.SEG(gamma_1=gamma_1_max, gamma_2=2 * gamma_1_max,
-                                                                          x0=x0,
-                                                                          n_iter=n_iter,
-                                                                          trials=trials, ig=True,
-                                                                          return_trajectory=True)
-
-        # save results in file
-        params = {"n": n,
-                  "dimension": d,
-                  "mu": mu,
-                  "condition_number": condition_num_list[i],
-                  "x0": x0,
-                  "stepsizes_used": {"gamma_1": gamma_1_max, "gamma_2": 2 * gamma_1_max},
-                  "relative_error_SEG": relative_error_SEG,
-                  "last_iterate_SEG": last_iterate_SEG,
-                  "relative_error_SEG_RR": relative_error_SEG_RR,
-                  "last_iterate_SEG_RR": last_iterate_SEG_RR,
-                  "relative_error_SO": relative_error_SO,
-                  "last_iterate_SO": last_iterate_SO,
-                  "relative_error_IG": relative_error_IG,
-                  "last_iterate_IG": last_iterate_IG,
-                  "trajectory_SEG_RR": trajectory_SEG_RR,
-                  "trajectory_SEG": trajectory_SEG,
-                  "trajectory_SO": trajectory_SO,
-                  "trajectory_IG": trajectory_IG,
-                  "iterations": n_iter,
-                  "trials": trials,
-                  "solution": problem.sol
-                  }
-        # params_list.append(params)
-
-        filename = "NEW_A_sc_sc_RR_vs_SO_vs_IG_cond_num" + str(condition_num_list[i]) + ".pkl"
-        with open(filename, 'wb') as f:
-            pickle.dump(params, f)
+    # # uncomment to run SEG vs SEG-RR
+    # for i in range(len(condition_num_list)):
+    #     print("started problem with condition_number:", condition_num_list[i])
+    #     problem = op.problem(problem_type="quadratic", n=n, d=d, mu=mu, L=condition_num_list[i])
+    #     optimizer = op.optimizer(problem)
+    #
+    #     gamma_1_max = problem.mu / (
+    #             10 * (problem.L_max ** 2) * np.sqrt(10 * (problem.n ** 2) + 2 * problem.n + 54))
+    #
+    #     last_iterate_SEG, relative_error_SEG, trajectory_SEG = optimizer.SEG(gamma_1=gamma_1_max,
+    #                                                                          gamma_2=2 * gamma_1_max, x0=x0,
+    #                                                                          n_iter=n_iter,
+    #                                                                          trials=trials, rr=False,
+    #                                                                          return_trajectory=True)
+    #
+    #     last_iterate_SEG_RR, relative_error_SEG_RR, trajectory_SEG_RR = optimizer.SEG(gamma_1=gamma_1_max,
+    #                                                                                   gamma_2=2 * gamma_1_max, x0=x0,
+    #                                                                                   n_iter=n_iter,
+    #                                                                                   trials=trials, rr=True,
+    #                                                                                   return_trajectory=True)
+    #     last_iterate_SO, relative_error_SO, trajectory_SO = optimizer.SEG(gamma_1=gamma_1_max, gamma_2=2 * gamma_1_max,
+    #                                                                       x0=x0,
+    #                                                                       n_iter=n_iter,
+    #                                                                       trials=trials, so=True,
+    #                                                                       return_trajectory=True)
+    #
+    #     last_iterate_IG, relative_error_IG, trajectory_IG = optimizer.SEG(gamma_1=gamma_1_max, gamma_2=2 * gamma_1_max,
+    #                                                                       x0=x0,
+    #                                                                       n_iter=n_iter,
+    #                                                                       trials=trials, ig=True,
+    #                                                                       return_trajectory=True)
+    #
+    #     # save results in file
+    #     params = {"n": n,
+    #               "dimension": d,
+    #               "mu": mu,
+    #               "condition_number": condition_num_list[i],
+    #               "x0": x0,
+    #               "stepsizes_used": {"gamma_1": gamma_1_max, "gamma_2": 2 * gamma_1_max},
+    #               "relative_error_SEG": relative_error_SEG,
+    #               "last_iterate_SEG": last_iterate_SEG,
+    #               "relative_error_SEG_RR": relative_error_SEG_RR,
+    #               "last_iterate_SEG_RR": last_iterate_SEG_RR,
+    #               "relative_error_SO": relative_error_SO,
+    #               "last_iterate_SO": last_iterate_SO,
+    #               "relative_error_IG": relative_error_IG,
+    #               "last_iterate_IG": last_iterate_IG,
+    #               "trajectory_SEG_RR": trajectory_SEG_RR,
+    #               "trajectory_SEG": trajectory_SEG,
+    #               "trajectory_SO": trajectory_SO,
+    #               "trajectory_IG": trajectory_IG,
+    #               "iterations": n_iter,
+    #               "trials": trials,
+    #               "solution": problem.sol
+    #               }
+    #     # params_list.append(params)
+    #
+    #     filename = "NEW_A_sc_sc_RR_vs_SO_vs_IG_cond_num" + str(condition_num_list[i]) + ".pkl"
+    #     with open(filename, 'wb') as f:
+    #         pickle.dump(params, f)
 
     # create plots
     for i in range(len(condition_num_list)):
         # load results
-        with open('newExperiments/NEW_A_sc_sc_RR_vs_SO_vs_IG_cond_num' + str(condition_num_list[i]) + ".pkl", 'rb') as f:
+        with open('saved_checkpoints/NEW_A_sc_sc_RR_vs_SO_vs_IG_cond_num' + str(condition_num_list[i]) + ".pkl", 'rb') as f:
             params_list = pickle.load(f)
-            print(params_list.keys())
         results_SEG_RR = params_list["relative_error_SEG_RR"]
         results_SEG = params_list["relative_error_SEG"]
         results_SO = params_list["relative_error_SO"]
         results_IG = params_list["relative_error_IG"]
 
-        # sparcify results
+        # sparsify results
         sparsified_results_SEG_RR = [results_SEG_RR[j] for j in range(len(results_SEG_RR)) if j % 10**5 == 0]
         sparsified_results_SEG = [results_SEG[j] for j in range(len(results_SEG)) if j % 10 ** 5 == 0]
         sparsified_results_SO = [results_SO[j] for j in range(len(results_SO)) if j % 10 ** 5 == 0]
@@ -105,7 +104,7 @@ def experiment_sc_sc_SEG_RR_vs_SEG_large_steps():
     condition_num_list = [1, 5, 10, 100]
     params_list = []  # list with the params of the experiments
 
-    # run SEG vs SEG-RR
+    # # uncomment to run experiments
     # for i in range(len(condition_num_list)):
     #     condition_number = condition_num_list[i]
     #     problem = op.problem(problem_type="quadratic", n=n, d=d, mu=mu, L=condition_number)
@@ -140,17 +139,16 @@ def experiment_sc_sc_SEG_RR_vs_SEG_large_steps():
     # # load results
     # create plots
     for i in range(len(condition_num_list)):
-        with open('A_sc_sc_SEG_vs_SEG_RR_large_steps_cond_num' + str(condition_num_list[i]) + '.pkl', 'rb') as f:
+        with open('saved_checkpoints/A_sc_sc_SEG_vs_SEG_RR_large_steps_cond_num' + str(condition_num_list[i]) + '.pkl', 'rb') as f:
             params_list = pickle.load(f)
         condition_number = condition_num_list[i]
         results_SEG_RR = params_list["relative_error_SEG_RR"]
         results_SEG = params_list["relative_error_SEG"]
-        # sparcify results
-        sparcified_results_SEG_RR = [results_SEG_RR[i] for i in range(len(results_SEG_RR)) if i % 10**4 == 0]
-        sparcified_results_SEG = [results_SEG[i] for i in range(len(results_SEG)) if i % 10 ** 4 == 0]
+        # sparsify results
+        sparsified_results_SEG_RR = [results_SEG_RR[i] for i in range(len(results_SEG_RR)) if i % 10**4 == 0]
+        sparsified_results_SEG = [results_SEG[i] for i in range(len(results_SEG)) if i % 10 ** 4 == 0]
         # plot results
-        op.plot_multiple_var([sparcified_results_SEG, sparcified_results_SEG_RR], labels=["SEG", "SEG-RR"], x_label="Iterations (x$10^4$)", y_label="Relative Error", title="SC-SC Problem ($\kappa=$"+str(condition_number)+")", save_figure=True, filename="Beyond_Strongly_Monotone_cond_num"+str(condition_number))
-
+        op.plot_multiple_var([sparsified_results_SEG, sparsified_results_SEG_RR], labels=["SEG", "SEG-RR"], x_label="Iterations (x$10^4$)", y_label="Relative Error", title="SC-SC Problem ($\kappa=$"+str(condition_number)+")", save_figure=True, filename="Beyond_Strongly_Monotone_cond_num"+str(condition_number))
 
 def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
     # SEG-RR vs SEG experiment
@@ -161,6 +159,8 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
     trials = 5
     x0 = np.random.normal(0, 1, 2 * d)
     condition_num_list = [1, 5, 10, 100]
+
+    # # uncomment to run experiment
     # for i in range(len(condition_num_list)):
     #     # initialize problem
     #     condition_number = condition_num_list[i]
@@ -219,7 +219,7 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
     for i in range(len(condition_num_list)):
         condition_number = condition_num_list[i]
         # load results
-        with open('newExperiments/2d_sc_sc_n_100_SEG_RR_vs_SEG_large_steps_further_exp_additional_for_step_2_cond_num' + str(
+        with open('saved_checkpoints/2d_sc_sc_n_100_SEG_RR_vs_SEG_large_steps_further_exp_additional_for_step_2_cond_num' + str(
                 condition_number) + ".pkl", 'rb') as f:
             results = pickle.load(f)
         relative_error_SEG_RR_list = results["relative_error_SEG_RR_list"]
@@ -287,7 +287,5 @@ if __name__ == '__main__':
     experiment_sc_sc_SEG_RR_vs_SEG_large_steps()
 
     print("Experiment 3 started ")
-    experiment_sc_sc_SEG_RR_vs_SEG_large_steps()
-
-    print("Experiment 4 started ")
     experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments()
+

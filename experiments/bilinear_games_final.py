@@ -22,19 +22,11 @@ def SEG_RR_vs_SEG():
                           2 * optimizer.problem.n * (optimizer.problem.n - 1)) * optimizer.problem.L_max), (np.sqrt(
             (optimizer.problem.L_max ** 4) + (optimizer.problem.n * optimizer.problem.mu * Omega_bar / 4)) - (
                                                                                                                     optimizer.problem.L_max ** 2)) / Omega_bar)
-    k_star = 16 // ((gamma_1_max ** 2) * (optimizer.problem.mu ** 2))
-
+    # #Uncomment to run the experiments
     # finalSEG_RR, results_SEG_RR, SEG_RR_trajectory = optimizer.SEG(gamma_1=1/(1000*optimizer.problem.L), gamma_2=4*1/(1000*optimizer.problem.L), x0=x0, n_iter=n_iter, trials=trials, rr=True, return_trajectory=True)
     # finalSEG, results_SEG, SEG_trajectory = optimizer.SEG(gamma_1=1/(1000*optimizer.problem.L), gamma_2=4*1/(1000*optimizer.problem.L), x0=x0, n_iter=n_iter, trials=trials, rr=False, return_trajectory=True)
 
-    # load results
-    with open('2d_SEG_RR_vs_SEG_bilinear_huge_stepsizes2.pkl', 'rb') as f:
-        results = pickle.load(f)
-    results_SEG_RR = results["relative_error_SEG_RR"]
-    SEG_RR_trajectory = results["SEG_RR_trajectory"]
-    results_SEG = results["relative_error_SEG"]
-    SEG_trajectory = results["SEG_trajectory"]
-
+    # #save results
     # results = {"relative_error_SEG_RR": results_SEG_RR,
     #            "SEG_RR_trajectory": SEG_RR_trajectory,
     #            "relative_error_SEG": results_SEG,
@@ -42,26 +34,36 @@ def SEG_RR_vs_SEG():
     # with open('2d_SEG_RR_vs_SEG_bilinear_huge_stepsizes2.pkl', 'wb') as f:
     #     pickle.dump(results, f)
 
-    # print(SEG_trajectory[-1], SGDA_trajectory[-1])
+    # load results
+    with open('saved_checkpoints/2d_SEG_RR_vs_SEG_bilinear_huge_stepsizes2.pkl', 'rb') as f:
+        results = pickle.load(f)
+    results_SEG_RR = results["relative_error_SEG_RR"]
+    SEG_RR_trajectory = results["SEG_RR_trajectory"]
+    results_SEG = results["relative_error_SEG"]
+    SEG_trajectory = results["SEG_trajectory"]
     sol = [0.006, 0.009]
-    sparcified_trajectory_SEG_RR = [SEG_RR_trajectory[i] for i in range(len(SEG_RR_trajectory)) if i % 10 ** 5 == 0]
-    sparcified_trajectory_SEG = [SEG_trajectory[i] for i in range(len(SEG_trajectory)) if i % 10 ** 5 == 0]
-    sparcified_rel_SEG_RR = [results_SEG_RR[i] for i in range(len(results_SEG_RR)) if i % 10 ** 5 == 0]
-    sparcified_rel_SEG = [results_SEG[i] for i in range(len(results_SEG)) if i % 10 ** 5 == 0]
 
-    op.plot_multiple_var([sparcified_rel_SEG, sparcified_rel_SEG_RR], labels=["SEG", "SEG-RR"],
+    sparsified_trajectory_SEG_RR = [SEG_RR_trajectory[i] for i in range(len(SEG_RR_trajectory)) if i % 10 ** 5 == 0]
+    sparsified_trajectory_SEG = [SEG_trajectory[i] for i in range(len(SEG_trajectory)) if i % 10 ** 5 == 0]
+    sparsified_rel_SEG_RR = [results_SEG_RR[i] for i in range(len(results_SEG_RR)) if i % 10 ** 5 == 0]
+    sparsified_rel_SEG = [results_SEG[i] for i in range(len(results_SEG)) if i % 10 ** 5 == 0]
+
+    op.plot_multiple_var([sparsified_rel_SEG, sparsified_rel_SEG_RR], labels=["SEG", "SEG-RR"],
                          y_label="Relative Error", x_label="Iterations (x$10^5$)", title="Bilinear Game", save_figure=True, filename="trajectory_2D")
-    op.plot_2d([sparcified_trajectory_SEG, sparcified_trajectory_SEG_RR], sol=sol, title="2D Trajectory Plot",
+    op.plot_2d([sparsified_trajectory_SEG, sparsified_trajectory_SEG_RR], sol=sol, title="2D Trajectory Plot",
                labels=["SEG", "SEG-RR"], save_figure=True, filename="2D_plot_main")
 
 def experiment_2d_SEG_RR_vs_SO_vs_IG():
-    # SEG-RR vs SEG experiment
+    #
+    # SEG-RR vs SEG vs SEG-SO vs IEG experiment
     #
     n = 10
     d = 1
     n_iter = 1 * 10 ** 6
     trials = 10
     condition_num_list = [1, 5, 10, 100]
+
+    # # Uncomment the following to run experiment
     # for i in range(len(condition_num_list)):
     #     condition_number = condition_num_list[i]
     #     print("start exp with condition_number ", condition_number)
@@ -119,7 +121,7 @@ def experiment_2d_SEG_RR_vs_SO_vs_IG():
     for i in range(len(condition_num_list)):
         condition_number = condition_num_list[i]
         # load results
-        with open('newExperiments/2d_bilinear_n_100_new_steps'+ str(
+        with open('saved_checkpoints/2d_bilinear_n_100_new_steps'+ str(
                 condition_number) + ".pkl", 'rb') as f:
             results = pickle.load(f)
         relative_error_SEG_RR = results["relative_error_SEG_RR"]
@@ -143,15 +145,13 @@ def experiment_2d_SEG_RR_vs_SO_vs_IG():
         sparsified_trajectory_SEG = [trajectory_SEG[i] for i in range(len(trajectory_SEG)) if
                                          i % 10 ** 4 == 0]
 
-        # op.plot_2d([sparsified_trajectory_SEG, sparsified_trajectory_SEG_RR],sol=solution,
-        #                      labels=["SEG", "SEG-RR"],
-        #                      title="Bilinear Problem ($L_{max}=$" + str(condition_number) + ")")
         op.plot_multiple_var([sparsified_relative_error_SEG, sparsified_relative_error_SEG_RR, sparsified_relative_error_SEG_SO[:60], sparsified_relative_error_SEG_IG[:60]], labels=["SEG", "SEG-RR","SEG-SO","IEG"],
                              x_label="Iterations (x$10^5$)",y_label="Relative Error",
                              title="Bilinear Problem", save_figure=True, filename="Bilinear_SEG_RR_vs_IG_vs_SO_cond_num"+str(condition_number))
 
 def experiment_2d_SEG_RR_vs_SEG_Hsieh_stepsizes():
-    # SEG-RR vs SEG experiment
+    #
+    # SEG-RR vs SEG experiment for stepsizes as in Hsieh et al.
     #
     n = 100
     d = 100
@@ -159,7 +159,9 @@ def experiment_2d_SEG_RR_vs_SEG_Hsieh_stepsizes():
     trials = 5
     condition_num_list = [1, 5, 10]
     x0 = np.random.normal(0, 1, 2 * d)
-    stepsize_rule_list = ["Hsieh_r_gamma_0"]#, "Hsieh_r_gamma_0.2", "Hsieh_r_gamma_0.7"]
+    stepsize_rule_list = ["Hsieh_r_gamma_0", "Hsieh_r_gamma_0.2", "Hsieh_r_gamma_0.7"]
+
+    # #Uncomment to run experiments
     # for i in range(len(condition_num_list)):
     #     condition_number = condition_num_list[i]
     #     print("start exp with condition_number ", condition_number)
@@ -193,34 +195,25 @@ def experiment_2d_SEG_RR_vs_SEG_Hsieh_stepsizes():
     #                 "SEG_trajectory": SEG_trajectory,
     #                 "final_point_SEG": final_point_SEG,
     #                 "solution": optimizer.problem.sol}
-    #     with open('newExperiments/2d_bilinear_Hsieh_steps_cond_num' + str(condition_number) +'.pkl', 'wb') as f:
+    #     with open('2d_bilinear_Hsieh_steps_cond_num' + str(condition_number) +'.pkl', 'wb') as f:
     #         pickle.dump(results, f)
 
     for i in range(len(condition_num_list)):
         condition_number = condition_num_list[i]
         for j in range(len(stepsize_rule_list)):
             # load results
-            with open('newExperiments/2d_bilinear_Hsieh_steps_cond_num' + str(
+            with open('saved_checkpoints/2d_bilinear_Hsieh_steps_cond_num' + str(
                     condition_number) + "_stepsize_" + stepsize_rule_list[j] + ".pkl", 'rb') as f:
                 results = pickle.load(f)
             relative_error_SEG_RR = results["relative_error_SEG_RR"]
             relative_error_SEG = results["relative_error_SEG"]
-            # trajectory_SEG_RR = results["SEG_RR_trajectory"]
-            # trajectory_SEG = results["SEG_trajectory"]
             solution = results["solution"]
-            print("here")
+
             sparsified_relative_error_SEG_RR = [relative_error_SEG_RR[i] for i in range(len(relative_error_SEG_RR)) if
                                                 i % 10 ** 5 == 0]
             sparsified_relative_error_SEG = [relative_error_SEG[i] for i in range(len(relative_error_SEG)) if
                                              i % 10 ** 5 == 0]
-            # sparsified_trajectory_SEG_RR = [trajectory_SEG_RR[i] for i in range(len(trajectory_SEG_RR)) if
-            #                                     i % 1 * 10 ** 5 == 0]
-            # sparsified_trajectory_SEG = [trajectory_SEG[i] for i in range(len(trajectory_SEG)) if
-            #                                  i % 1 * 10 ** 5 == 0]
-            print("start plo")
-            # op.plot_2d([sparsified_trajectory_SEG, sparsified_trajectory_SEG_RR], sol=solution,
-            #                      labels=["SEG", "SEG-RR"],
-            #                      title="Bilinear Problem ($L_{max}=$" + str(condition_number) + ")")
+
             op.plot_multiple_var([sparsified_relative_error_SEG, sparsified_relative_error_SEG_RR],
                                  labels=["SEG", "SEG-RR"], y_label="Relative Error",
                                  x_label="Iterations (x$10^4$)",
@@ -234,6 +227,7 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
     n_iter = 1 * 10 ** 5
     trials = 5
     condition_num_list = [1, 5, 10, 100]
+    # #Uncomment to run experiments
     # for i in range(len(condition_num_list)):
     #     # initialize problem
     #     condition_number = condition_num_list[i]
@@ -290,7 +284,7 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
     for i in range(3):
         condition_number = condition_num_list[i]
         # load results
-        with open('newExperiments/2d_bilinear_n_100_SEG_RR_vs_SEG_large_steps_further_exp_cond_num' + str(
+        with open('saved_checkpoints/2d_bilinear_n_100_SEG_RR_vs_SEG_large_steps_further_exp_cond_num' + str(
                 condition_number) + ".pkl", 'rb') as f:
             results = pickle.load(f)
         relative_error_SEG_RR_list = results["relative_error_SEG_RR_list"]
@@ -317,9 +311,6 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
                     sparsified_trajectory_SEG = [trajectory_SEG[i] for i in range(len(trajectory_SEG)) if
                                                  i % 10 ** 4 == 0]
 
-                    # op.plot_2d([sparsified_trajectory_SEG, sparsified_trajectory_SEG_RR], sol=solution,
-                    #            labels=["SEG", "SEG-RR"],
-                    #            title="Bilinear Problem ($L_{max}=$" + str(condition_number) + ")")
                     op.plot_multiple_var([sparsified_relative_error_SEG, sparsified_relative_error_SEG_RR],
                                          labels=["SEG", "SEG-RR"], y_label="Relative Error",
                                          x_label="Iterations (x$10^4$)",
@@ -345,9 +336,6 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
                     sparsified_trajectory_SEG = [trajectory_SEG[i] for i in range(len(trajectory_SEG)) if
                                                  i % 10 ** 4 == 0]
 
-                    # op.plot_2d([sparsified_trajectory_SEG, sparsified_trajectory_SEG_RR], sol=solution,
-                    #            labels=["SEG", "SEG-RR"],
-                    #            title="Bilinear Problem ($L_{max}=$" + str(condition_number) + ")")
                     op.plot_multiple_var([sparsified_relative_error_SEG[:4], sparsified_relative_error_SEG_RR[:4]],
                                          labels=["SEG", "SEG-RR"], y_label="Relative Error",
                                          x_label="Iterations (x$10^3$)",
@@ -371,9 +359,6 @@ def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
                 sparsified_trajectory_SEG = [trajectory_SEG[i] for i in range(len(trajectory_SEG)) if
                                              i % 10 ** 5 == 0]
 
-                # op.plot_2d([sparsified_trajectory_SEG, sparsified_trajectory_SEG_RR], sol=solution,
-                #            labels=["SEG", "SEG-RR"],
-                #            title="Bilinear Problem ($L_{max}=$" + str(condition_number) + ")")
                 op.plot_multiple_var([sparsified_relative_error_SEG, sparsified_relative_error_SEG_RR],
                                      labels=["SEG", "SEG-RR"], y_label="Relative Error",
                                      x_label="Iterations (x$10^5$)",
