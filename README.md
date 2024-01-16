@@ -9,9 +9,17 @@ citation
 
 # Optimizer Module 
 
+<!-- GETTING STARTED -->
+<br />
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="logo.png" alt="Logo" width="70" height="70">
+  </a>
+</p>
+
 As part of the paper, we provide the Optimizer's module that is an efficient and easy-to-customize implementation of common optimization algorithms. To use the module and run your experiments follow the details in the sections below.  
 
-<!-- GETTING STARTED -->
+
 ## Getting Started
 To get started make sure you have installed all the prerequisites on your computer and then follow the instructions in the installation section.
 
