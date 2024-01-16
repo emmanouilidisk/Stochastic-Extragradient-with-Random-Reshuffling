@@ -1,8 +1,8 @@
 # Stochastic ExtraGradient with Random Reshuffling: Improved Convergence for Variational Inequalities
 
-This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it. To reproduce the experiments of the paper, clone the project and run the files in the [experiments]() folder.      
+This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it. To reproduce the experiments of the paper, run the files in the [experiments](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) folder.      
 
-If you found our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed!
+If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed!
 ```
 citation
 ```
@@ -17,7 +17,7 @@ citation
   </a>
 </p>
 
-As part of the paper, we provide the Optimizer's module that is an efficient and easy-to-customize implementation of common optimization algorithms. To use the module and run your experiments follow the details in the sections below.  
+As part of the paper, we provide the "Optimizer's module" that is an efficient and easy-to-customize implementation of common optimization algorithms. To start using the module and run your experiments follow the details in the sections below.  
 
 
 ## Getting Started
