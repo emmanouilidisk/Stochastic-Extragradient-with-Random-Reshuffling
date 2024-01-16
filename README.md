@@ -55,12 +55,7 @@ For plotting the results, you can use the command:
 op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
-or for plotting multiple variables you can do:
-```
-op.plot_multiple_var([var1, var2], labels = ["Constant Stepsize", "Decreasing stepsize"], x_label="Iterations", title = "Strongly Monotone Game")
-```
-## Currently supported
-For more details on the available optimization algorithms please check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo). 
+For more details on the currently available commands and optimization algorithms please check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo). 
 
 
 
