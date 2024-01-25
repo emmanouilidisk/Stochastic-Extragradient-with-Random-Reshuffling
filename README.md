@@ -17,7 +17,8 @@ citation
   </a>
 </p>
 
-The "optimizer module" is an efficient and easy-to-customize implementation of common optimization algorithms. To start using the module and run your experiments follow the details in the sections below.
+The Optimizer Module is an efficient and easy-to-customize implementation of common optimization algorithms, letting you implement your own variant of an optimization method or run examples in less than 5 lines of code.   
+To start using the module and run your experiments follow the details in the sections below.
 
 
 ## Getting Started
@@ -40,15 +41,21 @@ Run your own experiments using the `optimizer_module` in less than 5 commands:
 ```python
 import optimizer_module as op
 
-# initialize the problem and optimizer object
+# initialize the problem
 problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=10)
 
 # initialize optimizer object  
 optimizer = op.optimizer(problem)
 
-# run your favorite optimization algorithm (e.g.SGD, SEG, SGDA, etc.)
+# run your favorite optimization algorithm
 results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
 ```
+Arguments of ```op.problem```:
+* problem_type: type of the problem (i.e. quadratic, affine, etc.)
+* n: number of data
+* d: dimension of data
+* mu: strongly convex parameter for strongly monotone functions
+* L: Lipschitz parameter for smooth problems  
 
 For plotting the results, you can use the command:  
 ```python
@@ -56,10 +63,6 @@ op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
 For more details on the currently available commands and optimization algorithms please check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo). 
-
-
-To start using the module and run your experiments follow the details in the sections below.  To reproduce the experiments of the paper, run the files in the [experiments](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) folder.      
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
