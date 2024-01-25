@@ -14,7 +14,7 @@ citation
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo.jpg" alt="Logo" width="70" height="70">
+    <img src="logo.drawio.png" alt="Logo" width="150" height="150">
   </a>
 </p>
 
