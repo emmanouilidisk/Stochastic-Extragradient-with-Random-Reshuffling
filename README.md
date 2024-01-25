@@ -1,8 +1,8 @@
-# Stochastic ExtraGradient with Random Reshuffling: Improved Convergence for Variational Inequalities
+# Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities
 
-This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities" and the ``optimizer_module`` associated with it. To reproduce the experiments of the paper, run the files in the [experiments](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) folder.      
+This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities", accepted to AISTATS 2024. As part of the paper, we provide also the "optimizer module", a library of common optimization algorithms, that might be used beyond the scope of the paper. 
 
-If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed!
+If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed! 🌟
 ```
 citation
 ```
@@ -17,7 +17,7 @@ citation
   </a>
 </p>
 
-As part of the paper, we provide the "Optimizer's module" that is an efficient and easy-to-customize implementation of common optimization algorithms. To start using the module and run your experiments follow the details in the sections below.  
+The "optimizer module" is an efficient and easy-to-customize implementation of common optimization algorithms. To start using the module and run your experiments follow the details in the sections below.
 
 
 ## Getting Started
@@ -37,7 +37,7 @@ $ pip install -r requirements.txt
 
 ## Run your experiments!
 Run your own experiments using the `optimizer_module` in less than 5 commands:  
-```
+```python
 import optimizer_module as op
 
 # initialize the problem and optimizer object
@@ -51,12 +51,14 @@ results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=1
 ```
 
 For plotting the results, you can use the command:  
-```
+```python
 op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
 For more details on the currently available commands and optimization algorithms please check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo). 
 
+
+To start using the module and run your experiments follow the details in the sections below.  To reproduce the experiments of the paper, run the files in the [experiments](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) folder.      
 
 
 <!-- CONTRIBUTING -->
