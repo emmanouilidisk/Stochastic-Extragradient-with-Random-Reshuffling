@@ -1,6 +1,7 @@
 # Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities
 
-This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities", accepted to AISTATS 2024. As part of the paper, we provide also the "optimizer module", a library of common optimization algorithms, that might be used beyond the scope of the paper. 
+This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities", which was accepted to AISTATS 2024.   
+As part of the paper, we provide the Optimizer Module, a library of common optimization algorithms that can be used for solving minimization and minimax problems. 
 
 If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed! 🌟
 ```
@@ -13,12 +14,12 @@ citation
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo.png" alt="Logo" width="70" height="70">
+    <img src="logo.jpg" alt="Logo" width="70" height="70">
   </a>
 </p>
 
-The Optimizer Module is an efficient and easy-to-customize implementation of common optimization algorithms, letting you implement your own variant of an optimization method or run examples in less than 5 lines of code.   
-To start using the module and run your experiments follow the details in the sections below.
+The Optimizer Module is an efficient and easy-to-customize implementation of common optimization algorithms, allowing you to easily implement your own variant of an optimization method or run experiments in less than 5 lines of code.   
+To start using the module and run your experiments, follow the details below.
 
 
 ## Getting Started
