@@ -1,11 +1,9 @@
 The current implementation supports the following algorithms:
-- Stochastic Gradient Descent (SGD)
-- SGDA
+- Stochastic Gradient Descent Ascent (SGDA)
 - SEG
 - Stochastic Hamiltonian GD
 
 and the following optimization problems:
 - Strongly monotone quadratic
 - Bilinear Game
-- Convex - Concave
-- Weak Minty Inequality
+- Convex - Concave  
