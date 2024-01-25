@@ -5,7 +5,7 @@ As part of the paper, we provide the Optimizer Module, a library of common optim
 
 If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed! 🌟
 ```
-citation
+citation to be added here!
 ```
 
 # Optimizer Module 
@@ -65,6 +65,11 @@ op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 
 For more details on the currently available commands and optimization algorithms please check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo). 
 
+<!-- Experiments from paper -->
+## Paper's Experiments
+
+To reproduce the experiments in the paper, run the files in the [experiments folder](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) of this repository.
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -76,3 +81,11 @@ Contribute following the above steps:
 3. Commit your Changes (`git commit -m 'Add some extra functionality'`)
 4. Push to the Branch (`git push origin new_branch_name`)
 5. Open a Pull Request  
+
+
+<!-- CONTACT -->
+## Contact
+
+Please contact emmanouilidis.kons@gmail.com if you have any question on the codes.   
+Enjoy!
+
