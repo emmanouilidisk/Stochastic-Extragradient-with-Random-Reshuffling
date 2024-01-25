@@ -63,7 +63,7 @@ For plotting the results, you can use the command:
 op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
-For more details on the currently available commands and optimization algorithms please check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo). 
+For more details on the currently available commands and optimization algorithms please check [here]([https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/README.md)). 
 
 <!-- Experiments from paper -->
 ## Paper's Experiments
