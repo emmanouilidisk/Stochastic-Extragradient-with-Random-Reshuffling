@@ -1,9 +1,9 @@
 import optimizer_module as op
-import numpy as np
-import pickle
 
 def experiment_sc_sc_RR_vs_SO_vsIG():
-    # sc-sc problem SEG-RR vs SEG
+    #
+    # sc-sc problem SEG-RR vs SEG vs SEG-SO vs SEG-IG
+    #
     n = 100
     d = 1
     n_iter = 4 * 10 ** 6
@@ -93,7 +93,9 @@ def experiment_sc_sc_RR_vs_SO_vsIG():
         op.plot_multiple_var([sparsified_results_SEG, sparsified_results_SEG_RR, sparsified_results_SO, sparsified_results_IG], labels=["SEG", "SEG-RR", "SEG-SO", "IEG"], x_label="Iterations (x$10^5$)", y_label="Relative Error", title="SC-SC Problem ($\kappa=$"+str(condition_num_list[i])+")", save_figure=True, filename="SC_SC_RR_vs_SO_IG"+str(condition_num_list[i]))
 
 def experiment_sc_sc_SEG_RR_vs_SEG_large_steps():
-    # sc-sc problem SEG-RR vs SEG
+    #
+    # sc-sc problem SEG-RR vs SEG for "large" stepsizes
+    #
     n = 100
     d = 100
     n_iter = 1 * 10 ** 5
@@ -151,7 +153,8 @@ def experiment_sc_sc_SEG_RR_vs_SEG_large_steps():
         op.plot_multiple_var([sparsified_results_SEG, sparsified_results_SEG_RR], labels=["SEG", "SEG-RR"], x_label="Iterations (x$10^4$)", y_label="Relative Error", title="SC-SC Problem ($\kappa=$"+str(condition_number)+")", save_figure=True, filename="Beyond_Strongly_Monotone_cond_num"+str(condition_number))
 
 def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
-    # SEG-RR vs SEG experiment
+    #
+    # SEG-RR vs SEG experiment for "large" stepsizes - 2 dimensional
     #
     n = 100
     d = 1

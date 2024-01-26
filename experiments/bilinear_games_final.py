@@ -1,10 +1,8 @@
-import optimizer_module_k as op
-import numpy as np
-import pickle
+import optimizer_module as op
 
 def SEG_RR_vs_SEG():
     #
-    # SEG-RR vs SEG experiment
+    # SEG-RR vs SEG experiment for theoretial stepsizes
     #
     n = 100
     d = 1
@@ -13,10 +11,7 @@ def SEG_RR_vs_SEG():
     x0 = np.random.normal(0, 1, 2 * d)
     problem = op.problem(problem_type="bilinear", n=n, d=d, mu=.1, L=10)
     optimizer = op.optimizer(problem)
-    # steps
-    Omega_bar = (optimizer.problem.L_max / (optimizer.problem.n * optimizer.problem.mu)) * (
-            2 * (24 * n ** 2 - 23 * n + 1 + (2.5 * (n - 1) * (2 * n - 1))) * optimizer.problem.L ** 2 +
-            optimizer.problem.A_const * (24 * (optimizer.problem.n ** 2) - 23 * optimizer.problem.n + 1))
+    # stepsize
     gamma_1_max = min(optimizer.problem.mu / (4 * (optimizer.problem.L_max ** 2)),
                       1.0 / (3 * np.sqrt(
                           2 * optimizer.problem.n * (optimizer.problem.n - 1)) * optimizer.problem.L_max), (np.sqrt(
@@ -220,7 +215,8 @@ def experiment_2d_SEG_RR_vs_SEG_Hsieh_stepsizes():
                                  title="Bilinear Problem ($L_{max}=$" + str(condition_number) + ")", save_figure=True, filename="Bilinear_Hsieh2_stepsizes_cond_num"+str(condition_number))
 
 def experiment_2d_SEG_RR_vs_SEG_large_steps_further_experiments():
-    # SEG-RR vs SEG experiment
+    #
+    # SEG-RR vs SEG experiment for "large" stepsizes (of the order 1/(10L))
     #
     n = 100
     d = 1
