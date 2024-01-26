@@ -9,9 +9,7 @@ citation to be added here!
 ```
 
 # Optimizer Module 
-
 <!-- GETTING STARTED -->
-<br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="op_logo.png" alt="Logo" width="350" height="240">
