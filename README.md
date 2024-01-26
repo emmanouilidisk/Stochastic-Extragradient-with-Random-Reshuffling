@@ -55,7 +55,7 @@ Arguments of ```op.problem```:
 * problem_type: type of the problem (i.e. quadratic, affine, etc.)
 * n: number of data
 * d: dimension of data
-* mu: strongly convex parameter for strongly monotone functions
+* mu: strongly convex parameter for strongly convex functions
 * L: Lipschitz parameter for smooth problems  
 
 For plotting the results, you can use the command:  
