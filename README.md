@@ -84,6 +84,6 @@ Contribute following the above steps:
 <!-- CONTACT -->
 ## Contact
 
-Please contact emmanouilidis.kons@gmail.com if you have any question on the codes.   
+Please contact emmanouilidis.kons@gmail.com if you have any questions on the code.   
 Enjoy!
 
