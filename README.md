@@ -12,7 +12,7 @@ citation to be added here!
 <!-- GETTING STARTED -->
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="op_logo.png" alt="Logo" width="350" height="240">
+    <img src="op_logo.png" alt="Logo" width="350" height="225">
   </a>
 </p>
 
