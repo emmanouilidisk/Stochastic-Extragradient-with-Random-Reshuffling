@@ -1,6 +1,5 @@
 from scipy.stats import ortho_group
 import numpy as np
-import itertools
 
 class problem:
 
