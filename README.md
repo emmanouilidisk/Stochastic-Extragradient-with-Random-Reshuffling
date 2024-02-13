@@ -11,7 +11,7 @@ citation to be added here!
 # Optimizer Module 
 <!-- GETTING STARTED -->
 <p align="center">
-  <img src="op_logo.png" alt="Logo" width="350" height="225">
+  <img src="op_logo.png" alt="Logo" width="350" height="225" align="center">
 </p>
 
 The Optimizer Module is an efficient and easy-to-customize implementation of common optimization algorithms, allowing you to easily implement your own variant of an optimization method or run experiments in less than 5 lines of code.   
