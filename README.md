@@ -11,9 +11,7 @@ citation to be added here!
 # Optimizer Module 
 <!-- GETTING STARTED -->
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="op_logo.png" alt="Logo" width="350" height="225">
-  </a>
+  <img src="op_logo.png" alt="Logo" width="350" height="225">
 </p>
 
 The Optimizer Module is an efficient and easy-to-customize implementation of common optimization algorithms, allowing you to easily implement your own variant of an optimization method or run experiments in less than 5 lines of code.   
@@ -67,7 +65,6 @@ For more details on the currently available commands and optimization algorithms
 ## Paper's Experiments
 
 To reproduce the experiments in the paper, run the files in the [experiments folder](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) of this repository.
-<img src="plot_bilinear_experiment.png" alt="Plot from experiments" width="350" height="225">
 
 <!-- CONTRIBUTING -->
 ## Contributing
