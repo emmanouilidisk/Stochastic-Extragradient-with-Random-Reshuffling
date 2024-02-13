@@ -67,6 +67,7 @@ For more details on the currently available commands and optimization algorithms
 ## Paper's Experiments
 
 To reproduce the experiments in the paper, run the files in the [experiments folder](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/tree/main/experiments) of this repository.
+<img src="plot_bilinear_experiment.png" alt="Plot from experiments" width="350" height="225">
 
 <!-- CONTRIBUTING -->
 ## Contributing
