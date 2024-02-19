@@ -15,8 +15,6 @@ class problem:
             self.generate_bilinear_problem(B, a, c)
         elif self.problem_type == "convex_concave":
             self.generate_convex_concave_problem(A, C, a, c)
-        elif self.problem_type == "c_c-counter_example":
-            self.generate_convex_concave_counter_example()
         elif self.problem_type == "weak_minty":
             self.generate_weak_minty_problem()
         elif self.problem_type == "ridge":
