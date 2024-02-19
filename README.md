@@ -47,11 +47,7 @@ problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=10)
 optimizer = op.optimizer(problem)
 
 # run your favorite optimization algorithm
-<<<<<<< HEAD
-results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10 ** 6, trials=10, rr=True)
-=======
 results = optimizer.SEG(gamma_1=1e-3, gamma_2=5e-3, x0=np.zeros(200), n_iter=10**6, trials=10)
->>>>>>> c2ed7e2a4bfa2be8f151f0dea3cc0eaebcff704a
 ```
 Arguments of ```op.problem```:
 * problem_type: type of the problem (i.e. quadratic, bilinear, etc.)
