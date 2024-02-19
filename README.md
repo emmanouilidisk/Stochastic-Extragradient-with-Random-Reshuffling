@@ -25,6 +25,7 @@ To get started make sure you have installed all the prerequisites on your comput
 To compile this implementation you will need:
 - [numpy](https://numpy.org/install/)
 - [pickle](https://docs.python.org/3/library/pickle.html) library
+- [matplotlib](https://matplotlib.org/) for plotting the results
 - [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module
 - Python 3.7 or later
 
