@@ -15,12 +15,8 @@ class problem:
             self.generate_bilinear_problem(B, a, c)
         elif self.problem_type == "convex_concave":
             self.generate_convex_concave_problem(A, C, a, c)
-        elif self.problem_type == "weak_minty":
-            self.generate_weak_minty_problem()
-        elif self.problem_type == "ridge":
-            self.generate_ridge_problem()
         else:
-            print("Select a type of problem to be generated!")
+            raise Exception("Select a type of problem to be generated!")
 
     def make_sym_matrix(self, mu=None, L=None, num_zeros=0):
         """
