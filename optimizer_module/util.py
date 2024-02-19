@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pickle
 
 def plot(var, y_label=" ", x_label="Iterations", title="", save_figure=False, filename=None):
     """

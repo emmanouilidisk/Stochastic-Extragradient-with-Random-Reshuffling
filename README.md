@@ -34,7 +34,8 @@ $ pip install -r requirements.txt
 ```
 
 ## Run your experiments!
-Run your own experiments using the `optimizer_module` in less than 5 commands:  
+Run your own experiments using the `optimizer_module` in less than 5 commands:
+
 ```python
 import optimizer_module as op
 
@@ -45,7 +46,7 @@ problem = op.problem(problem_type="quadratic", n=100, d=100, mu=0.1, L=10)
 optimizer = op.optimizer(problem)
 
 # run your favorite optimization algorithm
-results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10**6, trials=10, rr=True)
+results = optimizer.SEG(gamma_1=0.001, gamma_2=0.005, x0=np.zeros(200), n_iter=10 ** 6, trials=10, rr=True)
 ```
 Arguments of ```op.problem```:
 * problem_type: type of the problem (i.e. quadratic, affine, etc.)

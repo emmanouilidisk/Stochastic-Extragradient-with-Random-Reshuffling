@@ -1,2 +1,3 @@
-numpy==1.23.2
-pickle4==0.0.1
+numpy
+matplotlib
+pickle4
