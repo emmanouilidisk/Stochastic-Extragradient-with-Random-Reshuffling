@@ -26,7 +26,6 @@ To compile this implementation you will need:
 - [numpy](https://numpy.org/install/)
 - [pickle](https://docs.python.org/3/library/pickle.html) library
 - [matplotlib](https://matplotlib.org/) for plotting the results
-- [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) module
 - Python 3.7 or later
 
 You can install the prerequisites with the following command inside the project's folder
@@ -35,7 +34,7 @@ $ pip install -r requirements.txt
 ```
 
 ## Run your experiments!
-Run your own experiments using the `optimizer_module` in less than 5 commands:
+Run your own experiments using Optimizer module in less than 5 commands:
 
 ```python
 import optimizer_module as op
@@ -61,7 +60,7 @@ For plotting the results, you can use the command:
 op.plot(results, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
 
-For more details on the currently available commands and optimization algorithms please check [here]([https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/supported_opts_algo](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-RR/blob/main/docs/README.md)). 
+For more details on the available commands and optimization algorithms, check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-Random-Reshuffling/tree/main/docs). 
 
 <!-- Experiments from paper -->
 ## Paper's Experiments
