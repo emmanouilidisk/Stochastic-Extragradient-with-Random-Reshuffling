@@ -4,10 +4,11 @@ This is the official implementation of the paper "Stochastic Extragradient with 
 As part of the paper, we provide the Optimizer Module, a library of common optimization algorithms that can be used for solving minimization and minimax problems. 
 
 If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed! 🌟
-```
+
+<!---```
 citation to be added here!
 ```
-
+--->
 # Optimizer Module 
 <!-- GETTING STARTED -->
 <p align="center">
