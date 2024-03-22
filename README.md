@@ -5,10 +5,15 @@ As part of the paper, we provide the Optimizer Module, a library of common optim
 
 If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed! 🌟
 
-<!---```
-citation to be added here!
 ```
---->
+@misc{emmanouilidis2024stochastic,
+      title={Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities}, 
+      author={Konstantinos Emmanouilidis and René Vidal and Nicolas Loizou},
+      year={2024},
+      booktitle={AISTATS}
+}
+```
+
 # Optimizer Module 
 <!-- GETTING STARTED -->
 <p align="center">
