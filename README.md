@@ -1,6 +1,6 @@
 # Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities
 
-This is the official implementation of the paper "Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities", which was accepted to AISTATS 2024.   
+This is the official implementation of the paper [Stochastic Extragradient with Random Reshuffling: Improved Convergence for Variational Inequalities](https://arxiv.org/abs/2403.07148), which was accepted to AISTATS 2024.   
 As part of the paper, we provide the Optimizer Module, a library of common optimization algorithms that can be used for solving minimization and minimax problems. 
 
 If you find our code useful consider citing our paper. Also, star-ing the Github Repo is more than welcomed! 🌟
