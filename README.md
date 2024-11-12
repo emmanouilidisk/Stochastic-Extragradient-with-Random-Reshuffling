@@ -61,10 +61,13 @@ Arguments of ```op.problem```:
 * mu: strongly convex parameter (only for strongly convex functions)
 * L: Lipschitz parameter for smooth problems  
 
-For plotting the results, you can use the command:  
+You can plot the results using:  
 ```python
 op.plot(relative_error, y_label = "Relative Error", title = "Strongly Monotone Game")
 ```
+
+**Supported Algorithms**: SGDA, SEG, SHGD   
+**Supported Problems/Setups**: quadratic, bilinear, convex-concave
 
 For more details on the available commands and optimization algorithms, check [here](https://github.com/emmanouilidisk/Stochastic-ExtraGradient-with-Random-Reshuffling/tree/main/docs). 
 
